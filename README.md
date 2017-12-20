@@ -1,15 +1,25 @@
-# Spring Authorization and Authentication example
+# Spring Token based authorization and authentication with spring boot and spring serurity
 
-This example can be used to develop Authorization Server and Microservice using JWT Token. This example features Authentication and Authorization. It has two maven project "Auth" and "Customer". Both the project shares a common ke.
+This example can be used to develop Authorization Server and Microservice using JWT Token. This example explains how Authentication and Authorization works. It has two maven project "Auth" and "Customer". Both the project shares a common secret key.
 
-# Auth:- project features #
+## Flow
+1. Client authenticate login credentials with Auth Service, if the login credentials are correct it will generate JWT Token and send it back to the client in header as well as in the response, so we are taking care of Authencation.
+
+2. The same JWT token we need to send in every request to access microservices, each microservice will validate the token and it also takes care of Authorization.
+
+![alt text](https://github.com/kuldeepsingh99/authorization-authentication/blob/master/images/AuthFlow.png "Auth Flow")
+
+# Auth:- service features #
+
+This service validates the user credentials and generates JWT token
+
 1. Login Service (generating JWT Token) 
 2. Refresh Service (generating new JWT Token)
 3. Registration Service ( Adding new User)
 
 # Customer:-  Project features #
-1. Authorization :- checking whether token expires or not 
-2. Authentication :- cheking whether the resource user is trying to access has enough Permiession/Role
+
+This service validates JWT token and also takes care of Authentication
 
 ## Steps to Install ##
 
