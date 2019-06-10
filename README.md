@@ -1,4 +1,4 @@
-# Spring Token based authorization and authentication with spring boot and spring serurity
+# JWT Token based authorization and authentication mechanism with spring boot and spring security
 
 This example can be used to develop Authorization Server and Microservice using JWT Token. This example explains how Authentication and Authorization works. It has two maven project "Auth" and "Customer". Both the project shares a common secret key.
 
